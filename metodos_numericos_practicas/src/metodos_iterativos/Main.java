@@ -3,6 +3,8 @@ import java.util.Scanner;
 import org.nfunk.jep.JEP;
 import com.singularsys.jep.JepException;
 
+import sistemas_de_ecuaciones.Gauss;
+
 public class Main {
 	Double re;
 
@@ -19,12 +21,15 @@ public class Main {
 			System.out.println("-----------------------------------------------------");
 			System.out.println("|2. Metodo de Newton Raphson:                        |");
 			System.out.println("-----------------------------------------------------");
-			System.out.println("|3. Salir:                                           |");
+			System.out.println("|3. Sistema de ecuaciones por Gauss:                 |");
+			System.out.println("-----------------------------------------------------");
+			System.out.println("|4. Salir:                                           |");
 			System.out.println("-----------------------------------------------------");
 			x = leer.nextInt();
 
 			Biseccion metodoB = new Biseccion();
 			NewtonRaphson metodoN = new NewtonRaphson();
+			Gauss solucion = new Gauss();
 			switch (x) {
 			case 1:
 				System.out.println("\nMetodo de Biseccion");
@@ -45,6 +50,11 @@ public class Main {
 				}
 				break;
 			case 3:
+				System.out.println();
+				Gauss.main(args);
+				System.out.println();
+				break;
+			case 4:
 
 				System.out.println("-----------------------------------------------------");
 				System.out.println("|                 Adios vuelva pronto                |");
@@ -56,7 +66,7 @@ public class Main {
 				System.out.println("|         Elige una de las opciones: 1, 2 o 3        |");
 				System.out.println("-----------------------------------------------------");
 			}
-		} while (x != 3);
+		} while (x != 4);
 
 	}
 
